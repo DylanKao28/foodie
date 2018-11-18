@@ -2,27 +2,58 @@
 <html>
 <head>
     <title>Foodie</title>
-    <link href="../static/index.css" rel="stylesheet" />
+    <link href="../static/result.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
 </head>
 
 <body>
-    <h1 id = "top-posts-title">Search Results</h1>
-    <div id = "top-posts">
-        <!-- {%if results%} -->
-            <!--%{for result in results%}-->
-            
-                    <div class = "post">
+        <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                  <div class="navbar-header">
 
-                           
 
-                            <img class = "post-img" src = "https://cdn.cnn.com/cnnnext/dam/assets/171027052520-processed-foods-exlarge-tease.jpg">
-                            <h2>Result</h2>
-                            <h5>Overall Rating; 0</h5>
-                    </div>
-                
-            <!--{%endfor%}-->
-        <!--{%endif%}-->
+                    <a class="navbar-brand" href="#">FOODIE</a>
+                  </div>
+                </div>
+        </nav>
+
+    <div class = "container">
+            <h1 id = "top-posts-title" style = "text-align: center">Search Results</h1>
+            <div id = "top-posts">
+                {%if results%}
+                <div class = "row" style = "padding-top: 100px">
+                    {%for result in results%}
+                            
+                                    <div class="col-lg-4 col-md-3 col-sm-6">
+                                            <div class="thumbnail" style = "padding: 10px">
+
+                                            
+                                               <div class="caption">
+                                                   <a style="text-align: center" href = {{result["photo_url"]}}>{{result["name"]}}</a>
+                                               </div>
+                                                <p>
+                                                    <h5 style = "text-align: center">Address: {{result["address"]}}</h5>
+                                                </p>
+                                               <p>
+                                                    <h5 style="text-align: center">{{result["rating"]}} / 5 - {{result["votes"]}} votes</h5>
+
+                                               </p>
+                                                <div class = "row text-center">
+                                                    <a class="btn btn-primary" href={{result["menu_url"]}}>Menu</a>
+                                                </div>
+
+                                            </div>
+
+                                    </div>
+                            
+                            
+                    {%endfor%}
+                </div>
+                {%endif%}
+            </div>
     </div>
+   
 </body>
 
 </html>
