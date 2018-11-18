@@ -1,0 +1,24 @@
+table{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    width: 80%;
+    height: 10em;
+    max-height:10em;
+    margin:0.5em 1em;
+    border:0.5px gray solid;
+    border-radius: 0.2em;
+    box-shadow:2px 2px 0.5px 0.5px gray;
+    background: #fff;
+    opacity:0.8;
+}
+
+img{
+    width: 50;
+    height: 10em;
+}
+
+#image{
+    align: "right";
+    width: 50;
+}
